@@ -1,6 +1,5 @@
 @import url('/src/utils//variables.css');
 
-
 :root {
   font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   font-synthesis: none;
@@ -51,10 +50,9 @@ img {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  background-color: #ffffff;
   color: var(--black);
-
 }
 html {
   scroll-behavior: smooth;
@@ -70,7 +68,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d9d9d9;;
+  background: #d9d9d9;
   width: 8px;
   border-radius: 7px;
 }

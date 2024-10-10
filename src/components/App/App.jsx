@@ -1,17 +1,17 @@
-import css from './App.module.css';
-import { Suspense, lazy, useEffect } from 'react';
+import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation.jsx';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.jsx';
-import Loader from '../Loader/Loader.jsx';
 import { fetchCampers } from '../../redux/operations.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPage } from '../../redux/selectors.js';
 import { changeFilter } from '../../redux/filtersSlice.js';
+import Layout from 'components/Layout/Layout';
+import Header from 'components/Header/Header.jsx';
 
-const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
-const Catalog = lazy(() => import('../../pages/Catalog/Catalog.jsx'));
-const Favorites = lazy(() => import('../../pages/Favorites/Favorites.jsx'));
+const Home = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
+const News = lazy(() => import('../../pages/NewsPage/NewsPage.jsx'));
+const Notices = lazy(() => import('../../pages/NoticesPage/NoticesPage.jsx'));
+const Friends = lazy(() => import('../../pages/FriendsPage/FriendsPage.jsx'));
 
 function App() {
   const dispatch = useDispatch();
@@ -36,17 +36,16 @@ function App() {
   }, [dispatch, page]);
 
   return (
-    <div className={css.container}>
-      <Navigation />
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
-    </div>
+    <Layout>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/notices" element={<Notices />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Layout>
   );
 }
 

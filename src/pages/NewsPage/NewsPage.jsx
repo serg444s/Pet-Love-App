@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import CamperList from '../../components/CamperList/CamperList';
-import css from './Catalog.module.css';
+import css from './NewsPage.module.css';
+
 import {
   getCampersError,
   getCampersStatus,
@@ -15,7 +16,7 @@ import FilterForm from '../../components/FilterForm/FilterForm';
 import { incrementPage } from '../../redux/campersSlice';
 import { changeFilter } from '../../redux/filtersSlice';
 
-const Catalog = () => {
+const NewsPage = () => {
   const loading = useSelector(getCampersStatus);
   const error = useSelector(getCampersError);
   const items = useSelector(selectFilteredCampers);
@@ -73,4 +74,4 @@ const Catalog = () => {
     </>
   );
 };
-export default Catalog;
+export default NewsPage;

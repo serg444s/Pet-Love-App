@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from '../src/redux/store';
 import App from 'components/App/App';
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+</style>;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
