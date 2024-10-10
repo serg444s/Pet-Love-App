@@ -7,11 +7,16 @@ import { selectPage } from '../../redux/selectors.js';
 import { changeFilter } from '../../redux/filtersSlice.js';
 import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header.jsx';
+import RestrictedRoute from '../../RestrictedRoute.jsx';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const News = lazy(() => import('../../pages/NewsPage/NewsPage.jsx'));
 const Notices = lazy(() => import('../../pages/NoticesPage/NoticesPage.jsx'));
 const Friends = lazy(() => import('../../pages/FriendsPage/FriendsPage.jsx'));
+const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage.jsx'));
+const RegistrationPage = lazy(() =>
+  import('../../pages/RegistrationPage/RegistrationPage.jsx')
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +45,21 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/tracker"
+              component={<RegistrationPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/tracker" component={<LoginPage />} />
+          }
+        />
         <Route path="/news" element={<News />} />
         <Route path="/notices" element={<Notices />} />
         <Route path="/friends" element={<Friends />} />
