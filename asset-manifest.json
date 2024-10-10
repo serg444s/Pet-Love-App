@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Pet-Love-App/static/css/main.7dc58a9c.css",
-    "main.js": "/Pet-Love-App/static/js/main.6967d4fa.js",
+    "main.js": "/Pet-Love-App/static/js/main.76581817.js",
     "static/css/673.1fd67340.chunk.css": "/Pet-Love-App/static/css/673.1fd67340.chunk.css",
     "static/js/673.4b1ddec1.chunk.js": "/Pet-Love-App/static/js/673.4b1ddec1.chunk.js",
     "static/css/869.adeeaf3d.chunk.css": "/Pet-Love-App/static/css/869.adeeaf3d.chunk.css",
@@ -9,6 +9,10 @@
     "static/css/624.851b17c8.chunk.css": "/Pet-Love-App/static/css/624.851b17c8.chunk.css",
     "static/js/624.d7fc3d72.chunk.js": "/Pet-Love-App/static/js/624.d7fc3d72.chunk.js",
     "static/js/537.b807476a.chunk.js": "/Pet-Love-App/static/js/537.b807476a.chunk.js",
+    "static/css/169.31d6cfe0.chunk.css": "/Pet-Love-App/static/css/169.31d6cfe0.chunk.css",
+    "static/js/169.6b4f3992.chunk.js": "/Pet-Love-App/static/js/169.6b4f3992.chunk.js",
+    "static/css/223.31d6cfe0.chunk.css": "/Pet-Love-App/static/css/223.31d6cfe0.chunk.css",
+    "static/js/223.f6423067.chunk.js": "/Pet-Love-App/static/js/223.f6423067.chunk.js",
     "static/js/430.f92b32c0.chunk.js": "/Pet-Love-App/static/js/430.f92b32c0.chunk.js",
     "static/js/900.5e02bb4e.chunk.js": "/Pet-Love-App/static/js/900.5e02bb4e.chunk.js",
     "static/media/camper.jpg": "/Pet-Love-App/static/media/camper.f962e8e4679ff74d0cd4.jpg",
@@ -16,7 +20,7 @@
     "static/media/404.jpg": "/Pet-Love-App/static/media/404.ab1ed3fe4267fac86437.jpg",
     "index.html": "/Pet-Love-App/index.html",
     "main.7dc58a9c.css.map": "/Pet-Love-App/static/css/main.7dc58a9c.css.map",
-    "main.6967d4fa.js.map": "/Pet-Love-App/static/js/main.6967d4fa.js.map",
+    "main.76581817.js.map": "/Pet-Love-App/static/js/main.76581817.js.map",
     "673.1fd67340.chunk.css.map": "/Pet-Love-App/static/css/673.1fd67340.chunk.css.map",
     "673.4b1ddec1.chunk.js.map": "/Pet-Love-App/static/js/673.4b1ddec1.chunk.js.map",
     "869.adeeaf3d.chunk.css.map": "/Pet-Love-App/static/css/869.adeeaf3d.chunk.css.map",
@@ -24,11 +28,13 @@
     "624.851b17c8.chunk.css.map": "/Pet-Love-App/static/css/624.851b17c8.chunk.css.map",
     "624.d7fc3d72.chunk.js.map": "/Pet-Love-App/static/js/624.d7fc3d72.chunk.js.map",
     "537.b807476a.chunk.js.map": "/Pet-Love-App/static/js/537.b807476a.chunk.js.map",
+    "169.6b4f3992.chunk.js.map": "/Pet-Love-App/static/js/169.6b4f3992.chunk.js.map",
+    "223.f6423067.chunk.js.map": "/Pet-Love-App/static/js/223.f6423067.chunk.js.map",
     "430.f92b32c0.chunk.js.map": "/Pet-Love-App/static/js/430.f92b32c0.chunk.js.map",
     "900.5e02bb4e.chunk.js.map": "/Pet-Love-App/static/js/900.5e02bb4e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7dc58a9c.css",
-    "static/js/main.6967d4fa.js"
+    "static/js/main.76581817.js"
   ]
 }
