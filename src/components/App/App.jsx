@@ -8,6 +8,7 @@ import { changeFilter } from '../../redux/filtersSlice.js';
 import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header.jsx';
 import RestrictedRoute from '../../RestrictedRoute.jsx';
+import PrivateRoute from 'PrivateRoute.jsx';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const News = lazy(() => import('../../pages/NewsPage/NewsPage.jsx'));
@@ -16,6 +17,9 @@ const Friends = lazy(() => import('../../pages/FriendsPage/FriendsPage.jsx'));
 const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage.jsx'));
 const RegistrationPage = lazy(() =>
   import('../../pages/RegistrationPage/RegistrationPage.jsx')
+);
+const ProfilePage = lazy(() =>
+  import('../../pages/ProfilePage/ProfilePage.jsx')
 );
 
 function App() {
@@ -58,6 +62,12 @@ function App() {
           path="/login"
           element={
             <RestrictedRoute redirectTo="/tracker" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/tracker"
+          element={
+            <PrivateRoute redirectTo="/profile" component={<ProfilePage />} />
           }
         />
         <Route path="/news" element={<News />} />

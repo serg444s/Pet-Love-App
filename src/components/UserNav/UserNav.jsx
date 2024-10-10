@@ -1,7 +1,13 @@
-import React from 'react';
+import LogOutBtn from 'components/LogOutBtn/LogOutBtn';
+import UserBar from 'components/UserBar/UserBar';
 
 const UserNav = () => {
-  return <div></div>;
+  return (
+    <div>
+      <UserBar />
+      <LogOutBtn />
+    </div>
+  );
 };
 
 export default UserNav;
