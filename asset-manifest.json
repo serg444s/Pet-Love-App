@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Pet-Love-App/static/css/main.8746b040.css",
+    "main.js": "/Pet-Love-App/static/js/main.3c6deff9.js",
+    "static/css/673.1fd67340.chunk.css": "/Pet-Love-App/static/css/673.1fd67340.chunk.css",
+    "static/js/673.4b1ddec1.chunk.js": "/Pet-Love-App/static/js/673.4b1ddec1.chunk.js",
+    "static/css/752.07ca1809.chunk.css": "/Pet-Love-App/static/css/752.07ca1809.chunk.css",
+    "static/js/752.073e2c15.chunk.js": "/Pet-Love-App/static/js/752.073e2c15.chunk.js",
+    "static/css/412.53a3b3d0.chunk.css": "/Pet-Love-App/static/css/412.53a3b3d0.chunk.css",
+    "static/js/412.0c45ff59.chunk.js": "/Pet-Love-App/static/js/412.0c45ff59.chunk.js",
+    "static/js/430.f92b32c0.chunk.js": "/Pet-Love-App/static/js/430.f92b32c0.chunk.js",
+    "static/js/900.95dc8f77.chunk.js": "/Pet-Love-App/static/js/900.95dc8f77.chunk.js",
+    "static/media/camper.jpg": "/Pet-Love-App/static/media/camper.f962e8e4679ff74d0cd4.jpg",
+    "static/media/sprite.svg": "/Pet-Love-App/static/media/sprite.367e7bf3f8c68a818baa6ad48684af8d.svg",
+    "static/media/404.jpg": "/Pet-Love-App/static/media/404.ab1ed3fe4267fac86437.jpg",
+    "index.html": "/Pet-Love-App/index.html",
+    "main.8746b040.css.map": "/Pet-Love-App/static/css/main.8746b040.css.map",
+    "main.3c6deff9.js.map": "/Pet-Love-App/static/js/main.3c6deff9.js.map",
+    "673.1fd67340.chunk.css.map": "/Pet-Love-App/static/css/673.1fd67340.chunk.css.map",
+    "673.4b1ddec1.chunk.js.map": "/Pet-Love-App/static/js/673.4b1ddec1.chunk.js.map",
+    "752.07ca1809.chunk.css.map": "/Pet-Love-App/static/css/752.07ca1809.chunk.css.map",
+    "752.073e2c15.chunk.js.map": "/Pet-Love-App/static/js/752.073e2c15.chunk.js.map",
+    "412.53a3b3d0.chunk.css.map": "/Pet-Love-App/static/css/412.53a3b3d0.chunk.css.map",
+    "412.0c45ff59.chunk.js.map": "/Pet-Love-App/static/js/412.0c45ff59.chunk.js.map",
+    "430.f92b32c0.chunk.js.map": "/Pet-Love-App/static/js/430.f92b32c0.chunk.js.map",
+    "900.95dc8f77.chunk.js.map": "/Pet-Love-App/static/js/900.95dc8f77.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8746b040.css",
+    "static/js/main.3c6deff9.js"
+  ]
+}
