@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/537.b807476a.chunk.js","mappings":"mKAMA,UAJoB,WAClB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,eACd,C","sources":["pages/FriendsPage/FriendsPage.jsx"],"sourcesContent":["import React from 'react';\n\nconst FriendsPage = () => {\n  return <div>FriendsPage</div>;\n};\n\nexport default FriendsPage;\n"],"names":["_jsx","children"],"sourceRoot":""}
