@@ -7,6 +7,7 @@ const RegistrationPage = () => {
     <div className={css.signUpPageWrapper}>
       <div className={css.formWrapper}>{/* <SignUpForm /> */}</div>
       <div className={css.disabled}>{/* <AdvantagesSection /> */}</div>
+      RegistrationPage
     </div>
   );
 };

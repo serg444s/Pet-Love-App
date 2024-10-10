@@ -7,6 +7,7 @@ const LoginPage = () => {
     <div className={css.signInPageWrapper}>
       <div className={css.formWrapper}>{/* <SignInForm /> */}</div>
       <div className={css.disabled}>{/* <AdvantagesSection /> */}</div>
+      LoginPage
     </div>
   );
 };
