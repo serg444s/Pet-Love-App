@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import css from './FilterForm.module.css';
 import IconSvg from '../IconSvg/IconSvg';
-import { changeFilter } from '../../redux/filtersSlice';
+import { changeFilter } from '../../redux/camper/filtersSlice';
 import { useDispatch } from 'react-redux';
 
 const FilterForm = () => {

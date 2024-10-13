@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import CamperList from '../../components/CamperList/CamperList';
-import { selectFilteredFavorites } from '../../redux/selectors';
+import { selectFilteredFavorites } from '../../redux/camper/selectors';
 import FilterForm from '../../components/FilterForm/FilterForm';
 import css from './NoticesPage.module.css';
 

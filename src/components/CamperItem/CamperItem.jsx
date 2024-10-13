@@ -3,7 +3,7 @@ import { formatPrice } from '../../utils/formatPrice';
 import IconSvg from '../IconSvg/IconSvg';
 import css from './CamperItem.module.css';
 import CamperModal from '../CamperModal/CamperModal';
-import { changeFavorite } from '../../redux/favoriteSlice';
+import { changeFavorite } from '../../redux/camper/favoriteSlice';
 import { useDispatch } from 'react-redux';
 import { getLocation } from '../../utils/getLocation';
 

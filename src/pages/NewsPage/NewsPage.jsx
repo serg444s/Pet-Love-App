@@ -8,13 +8,13 @@ import {
   selectFilteredCampers,
   selectPage,
   selectLastPage,
-} from '../../redux/selectors';
+} from '../../redux/camper/selectors';
 import { useEffect } from 'react';
-import { getStartCampers } from '../../redux/operations';
+import { getStartCampers } from '../../redux/camper/operations';
 import { LoadMoreBtn } from '../../components/LoadMoreBtn/LoadMoreBtn';
 import FilterForm from '../../components/FilterForm/FilterForm';
 import { incrementPage } from '../../redux/campersSlice';
-import { changeFilter } from '../../redux/filtersSlice';
+import { changeFilter } from '../../redux/camper/filtersSlice';
 
 const NewsPage = () => {
   const loading = useSelector(getCampersStatus);

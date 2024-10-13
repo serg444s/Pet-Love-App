@@ -1,10 +1,10 @@
 import { lazy, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.jsx';
-import { fetchCampers } from '../../redux/operations.js';
+import { fetchCampers } from '../../redux/camper/operations.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPage } from '../../redux/selectors.js';
-import { changeFilter } from '../../redux/filtersSlice.js';
+import { selectPage } from '../../redux/camper/selectors.js';
+import { changeFilter } from '../../redux/camper/filtersSlice.js';
 import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header.jsx';
 import RestrictedRoute from '../../RestrictedRoute.jsx';
