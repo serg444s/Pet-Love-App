@@ -4,8 +4,8 @@ import UserBar from 'components/UserBar/UserBar';
 const UserNav = () => {
   return (
     <div>
-      <UserBar />
       <LogOutBtn />
+      <UserBar />
     </div>
   );
 };

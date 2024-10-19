@@ -9,11 +9,11 @@ const buildLinkClass = ({ isActive }) => {
 const AuthNav = () => {
   return (
     <div className={css.nav}>
-      <NavLink to="/register" className={buildLinkClass}>
-        Home
-      </NavLink>
       <NavLink to="/login" className={buildLinkClass}>
-        News
+        Login
+      </NavLink>
+      <NavLink to="/register" className={buildLinkClass}>
+        Register
       </NavLink>
     </div>
   );

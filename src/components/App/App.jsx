@@ -53,7 +53,7 @@ function App() {
           path="/register"
           element={
             <RestrictedRoute
-              redirectTo="/tracker"
+              redirectTo="/register"
               component={<RegistrationPage />}
             />
           }
@@ -61,11 +61,11 @@ function App() {
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/tracker" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/login" component={<LoginPage />} />
           }
         />
         <Route
-          path="/tracker"
+          path="/profile"
           element={
             <PrivateRoute redirectTo="/profile" component={<ProfilePage />} />
           }

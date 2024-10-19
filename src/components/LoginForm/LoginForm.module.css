@@ -1,0 +1,59 @@
+.form {
+  border-radius: 60px;
+  padding: 77px 84px;
+  width: 592px;
+  height: 654px;
+  background: #fff;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #262626;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin-bottom: 32px;
+}
+
+.input {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 16px;
+  width: 424px;
+  height: 52px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 16px;
+  width: 424px;
+  height: 52px;
+  background: #f6b83d;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.subtext {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.login {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+}

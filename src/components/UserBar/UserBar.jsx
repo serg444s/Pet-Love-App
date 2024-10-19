@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
-import css from './UserNav.module.css';
+import css from './UserBar.module.css';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -8,11 +8,9 @@ const buildLinkClass = ({ isActive }) => {
 
 const UserBar = () => {
   return (
-    <div>
-      <NavLink to="/profile" className={buildLinkClass}>
-        Home
-      </NavLink>
-    </div>
+    <NavLink to="/profile" className={buildLinkClass}>
+      Profile
+    </NavLink>
   );
 };
 

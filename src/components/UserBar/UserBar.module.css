@@ -1,0 +1,17 @@
+.link {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 15px 20px;
+  height: 50px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.active {
+  border-color: #f6b83d;
+}

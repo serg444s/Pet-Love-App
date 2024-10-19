@@ -1,0 +1,11 @@
+.block {
+  border-radius: 60px;
+  width: 592px;
+  height: 654px;
+  background: #f6b83d;
+}
+
+.img {
+  width: 512px;
+  height: 648px;
+}
