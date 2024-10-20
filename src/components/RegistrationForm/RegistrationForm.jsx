@@ -3,8 +3,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import css from './RegistrationForm.module.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
+import { registerUser } from '../../redux/auth/operations';
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
     email: Yup.string()
@@ -26,11 +31,29 @@ const RegistrationForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = async ({ name, email, password }) => {
+    console.log('onSubmit', name, email, password);
+    try {
+      const response = await dispatch(registerUser({ name, email, password }));
+
+      if (response.error) {
+        toast.error(
+          response.payload.response.data.message || 'Registration failed'
+        );
+      }
+    } catch (error) {
+      toast.error('Something went wrong');
+    }
   };
 
   return (

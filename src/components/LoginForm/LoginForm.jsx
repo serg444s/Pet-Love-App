@@ -3,8 +3,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import css from './LoginForm.module.css';
 import { Link } from 'react-router-dom';
+import { logIn } from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .required('Email is required')
@@ -22,11 +27,25 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      email: '',
+      password: '',
+    },
     resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = async ({ email, password }) => {
+    try {
+      const response = await dispatch(logIn({ email, password }));
+      console.log(response);
+
+      if (response.error) {
+        toast.error(response.payload.response.data.message || 'Login failed');
+      }
+    } catch (error) {
+      toast.error('Something went wrong');
+    }
   };
 
   return (
