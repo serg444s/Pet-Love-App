@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  registerUser,
   logIn,
   logOut,
   refreshUser,
+  loginGoogle,
   getUserProfile,
   updateUserProfile,
-  registerUser,
 } from './operations';
 
 const handlePending = state => {
@@ -37,22 +38,38 @@ const initialState = {
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState,
-  reducers: {
-    updateToken(state, action) {
-      state.token = action.payload;
+  initialState: {
+    user: {
+      _id: null,
+      email: null,
+      name: null,
+      avatar: null,
+      phone: null,
+      noticesViewed: [],
+      noticesFavorites: [],
+      pets: [],
     },
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false,
+    loading: false,
+    error: null,
   },
+  // reducers: {
+  //   updateToken(state, action) {
+  //     state.token = action.payload;
+  //   },
+  // },
   extraReducers: builder => {
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        // state.user = action.payload.data.user;
+        state.token = action.payload.data.accessToken;
         state.isLoggedIn = true;
       })
       .addCase(logIn.fulfilled, (state, action) => {
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        // state.user = action.payload.data.user;
+        state.token = action.payload.data.accessToken;
         state.isLoggedIn = true;
       })
       .addCase(logOut.fulfilled, state => {
@@ -70,12 +87,13 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, state => {
-        state.user = initialState.user;
-        state.token = null;
         state.isRefreshing = false;
         state.isLoggedIn = false;
       })
-
+      .addCase(loginGoogle.fulfilled, (state, action) => {
+        state.token = action.payload.data.accessToken;
+        state.isLoggedIn = true;
+      })
       .addCase(getUserProfile.pending, handlePending)
       .addCase(getUserProfile.fulfilled, (state, action) => {
         state.user = action.payload;
@@ -92,5 +110,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { updateToken } = authSlice.actions;
+// export const { updateToken } = authSlice.actions;
 export const authReducer = authSlice.reducer;

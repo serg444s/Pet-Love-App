@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { apiClient } from '../auth/apiClient';
+import { apiClient } from '../apiClient';
 
 export const fetchMonthWater = createAsyncThunk(
   'water/month',
