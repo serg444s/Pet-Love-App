@@ -4,111 +4,110 @@ import {
   logIn,
   logOut,
   refreshUser,
-  loginGoogle,
-  getUserProfile,
-  updateUserProfile,
+  editUser,
+  addPet,
+  removePet,
 } from './operations';
-
-const handlePending = state => {
-  state.loading = true;
-};
-
-const handleRejected = (state, action) => {
-  state.loading = false;
-  state.error = action.payload;
-};
 
 const initialState = {
   user: {
-    _id: null,
-    email: null,
     name: null,
-    avatar: null,
+    email: null,
     phone: null,
-    noticesViewed: [],
-    noticesFavorites: [],
-    pets: [],
+    avatar: null,
   },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
-  loading: false,
-  error: null,
+  isLoading: false,
+  pets: [],
+  noticesViewed: [],
+  noticesFavorites: [],
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    user: {
-      _id: null,
-      email: null,
-      name: null,
-      avatar: null,
-      phone: null,
-      noticesViewed: [],
-      noticesFavorites: [],
-      pets: [],
-    },
-    token: null,
-    isLoggedIn: false,
-    isRefreshing: false,
-    loading: false,
-    error: null,
-  },
-  // reducers: {
-  //   updateToken(state, action) {
-  //     state.token = action.payload;
-  //   },
-  // },
+  initialState,
+  reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(registerUser.fulfilled, (state, action) => {
-        // state.user = action.payload.data.user;
-        state.token = action.payload.data.accessToken;
-        state.isLoggedIn = true;
+      .addCase(registerUser.pending, state => {
+        state.isLoading = true;
       })
-      .addCase(logIn.fulfilled, (state, action) => {
-        // state.user = action.payload.data.user;
-        state.token = action.payload.data.accessToken;
+      .addCase(registerUser.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.token = payload.token;
         state.isLoggedIn = true;
+        state.isLoading = false;
+      })
+      .addCase(registerUser.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(logIn.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(logIn.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.token = payload.token;
+        state.isLoggedIn = true;
+        state.isLoading = false;
+      })
+      .addCase(logIn.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(logOut.pending, state => {
+        state.isLoading = true;
       })
       .addCase(logOut.fulfilled, state => {
-        state.user = initialState.user;
+        state.user = { name: null, email: null, phone: null, avatar: null };
         state.token = null;
         state.isLoggedIn = false;
-        state.loading = false;
+        state.isLoading = false;
+        state.noticesFavorites = [];
+        state.noticesViewed = [];
+        state.pets = [];
+      })
+      .addCase(logOut.rejected, state => {
+        state.isLoading = false;
       })
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
       })
-      .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user = action.payload;
+      .addCase(refreshUser.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.user.phone = payload.phone;
+        state.user.avatar = payload.avatar;
+        state.noticesFavorites = payload.noticesFavorites;
+        state.noticesViewed = payload.noticesViewed;
+        state.pets = payload.pets;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, state => {
         state.isRefreshing = false;
-        state.isLoggedIn = false;
       })
-      .addCase(loginGoogle.fulfilled, (state, action) => {
-        state.token = action.payload.data.accessToken;
-        state.isLoggedIn = true;
+      .addCase(editUser.pending, state => {
+        state.isLoading = true;
+        state.isRefreshing = true;
       })
-      .addCase(getUserProfile.pending, handlePending)
-      .addCase(getUserProfile.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.loading = false;
-        state.error = null;
+      .addCase(editUser.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.user.phone = payload.phone;
+        state.user.avatar = payload.avatar;
+        state.isLoading = false;
+        state.isRefreshing = false;
       })
-      .addCase(getUserProfile.rejected, handleRejected)
-      .addCase(updateUserProfile.pending, handlePending)
-      .addCase(updateUserProfile.fulfilled, (state, action) => {
-        state.user = { ...state.user, ...action.payload };
-        state.loading = false;
-        state.error = null;
+      .addCase(addPet.fulfilled, (state, { payload }) => {
+        state.pets = payload.pets;
+      })
+      .addCase(removePet.fulfilled, (state, { payload }) => {
+        state.pets = payload.pets;
       });
   },
 });
 
-// export const { updateToken } = authSlice.actions;
 export const authReducer = authSlice.reducer;

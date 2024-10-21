@@ -1,7 +1,7 @@
-export const selectIsLoggedIn = state => state.auth?.isLoggedIn;
-export const selectIsRefreshing = state => state.auth.isRefreshing;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 export const selectUser = state => state.auth.user;
-export const selectUserProfile = state => state.auth.user;
-export const selectUpdateUserProfile = state => state.auth.user;
-export const selectIsLoading = state => state.auth.loading;
-export const selectError = state => state.auth.error;
+export const selectIsRefreshing = state => state.auth.isRefreshing;
+export const selectIsLoading = state => state.auth.isLoading;
+export const selectFavoritesNotices = state => state.auth.noticesFavorites;
+export const selectViewedNotices = state => state.auth.noticesViewed;
+export const selectPets = state => state.auth.pets;

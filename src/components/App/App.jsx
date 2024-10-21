@@ -9,6 +9,7 @@ import Layout from 'components/Layout/Layout';
 import Header from 'components/Header/Header.jsx';
 import RestrictedRoute from '../../RestrictedRoute.jsx';
 import PrivateRoute from 'PrivateRoute.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const Home = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const News = lazy(() => import('../../pages/NewsPage/NewsPage.jsx'));
@@ -45,32 +46,40 @@ function App() {
   }, [dispatch, page]);
 
   return (
-    <Layout>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute redirectTo="/" component={<RegistrationPage />} />
-          }
-        />
-        <Route
-          path="/login"
-          element={<RestrictedRoute redirectTo="/" component={<LoginPage />} />}
-        />
-        <Route
-          path="/profile"
-          element={
-            <PrivateRoute redirectTo="/profile" component={<ProfilePage />} />
-          }
-        />
-        <Route path="/news" element={<News />} />
-        <Route path="/notices" element={<Notices />} />
-        <Route path="/friends" element={<Friends />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Layout>
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
+      <Layout>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/"
+                component={<RegistrationPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute redirectTo="/profile" component={<ProfilePage />} />
+            }
+          />
+          <Route path="/news" element={<News />} />
+          <Route path="/notices" element={<Notices />} />
+          <Route path="/friends" element={<Friends />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
+    </>
   );
 }
 
