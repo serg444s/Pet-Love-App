@@ -1,11 +1,13 @@
+import Hero from 'components/Hero/Hero';
 import css from './HomePage.module.css';
+import HeroImage from 'components/HeroImgContainer/HeroImgContainer';
 
 const HomePage = () => {
   return (
-    <>
-      <h1 className={css.title}>HomePage </h1>
-      <div className={css.wrapper}>Home Page content</div>
-    </>
+    <section className={css.section}>
+      <Hero />
+      <HeroImage />
+    </section>
   );
 };
 

@@ -1,13 +1,5 @@
 @import url('/src/utils//variables.css');
 
-:root {
-  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 h1,
 h2,
 h3,
