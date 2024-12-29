@@ -5,10 +5,10 @@ import css from './Header.module.css';
 import { useLocation } from 'react-router-dom';
 import BurgerBtn from './BurgerBtn/BurgerBtn';
 import AuthNav from 'components/AuthNav/AuthNav';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 import UserNav from 'components/UserNav/UserNav';
 import { useMediaQuery } from 'react-responsive';
 import { useAuth } from 'hooks/useAuth';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const Header = () => {
   const tablet = useMediaQuery({ minWidth: 768 });
