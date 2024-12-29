@@ -26,8 +26,8 @@ const Navigation = () => {
           Our friends
         </NavLink>
       </nav>
-      {selectIsLoggedIn ? <UserNav /> : <AuthNav />}
-      <div className={css.line}></div>
+      {/* {selectIsLoggedIn ? <UserNav /> : <AuthNav />} */}
+      {/* <div className={css.line}></div> */}
     </>
   );
 };

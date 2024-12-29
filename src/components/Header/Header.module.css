@@ -1,3 +1,43 @@
 .header {
+  padding: 10px 20px 0 20px;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px 22px 20px;
+  background-color: var(--accent-color);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+    padding: 10px 32px 0 32px;
+  }
+  .container {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    padding: 27px 32px 62px 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    max-width: 1280px;
+  }
+  .container {
+    padding: 27px 32px 32px 32px;
+  }
 }
